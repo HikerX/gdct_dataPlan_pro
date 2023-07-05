@@ -1,21 +1,21 @@
 extends layout
- 
   
 
 block content
-  h1= "广东电信0元流量包"
+  h3= "0元流量包"
+
   form( id="product" action="")
     .form-group            
       input#proctuct1.radio-inline(type="radio", name="item", value=1, title = "日租包", checked)
-      label(for="proctuct1", title="每日可领取") 1G日包 
+      label(for="proctuct1", title="每日可领取") 1G日包
       br
       input#proctuct2.radio-inline(type="radio", name="item", title = "5G网络体验包", value=2)     
-      label(for="proctuct2", title= "5G网络专用, 领取一次3个月有效") 10G体验月包    
+      label(for="proctuct2", title= " 领1次3个月有效") 10G体验月包
 
   form( action="")
     .form-group
       label(for="cellNumber") 手机号 
-      input#cellNumber.form-control(type="text", placeholder="广东电信手机号", name="cellNumber" maxlength="11")
+      input#cellNumber.form-control(type="text", name="cellNumber" maxlength="11")
       button#sendSms.btn.btn-primary(type="button", disabled="disabled") 获取验证码
     .form-group      
       label(for="smsCode") 验证码 
@@ -24,6 +24,8 @@ block content
     .form-group      
       label(for="result") 结果 
       input#resultDisplay.form-control(type="text", placeholder="...", name="result",readonly )
+
+  <p> 1,日租包当日有效，每天可领；<br/>2,体验包5G网络专用，领1次3个月有效。</p>
 
   script(src='/javascripts/index.js')
 

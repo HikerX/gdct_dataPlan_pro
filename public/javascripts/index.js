@@ -78,7 +78,7 @@ $("#sendSms").click(function(){
     }
     // J10138 lantId
     $.post("/api/J/J20096.j", payload, (body)=>{
-        countDown(6)   
+        countDown(60)   
         if (body.b && body.b.c == '00') {
             if (body.r && body.r.code == '000') {
                 console.log('验证码发送成功！');
