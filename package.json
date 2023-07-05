@@ -1,6 +1,9 @@
 {
   "name": "gdct-data-exp",
   "version": "0.0.0",
+  "engines": {
+    "node": ">=v18.14.2"
+  },
   "private": true,
   "scripts": {
     "start": "node ./bin/www",
