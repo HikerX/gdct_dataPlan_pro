@@ -40,6 +40,7 @@ app.use("/api", proxy("gd.189.cn", {
   https: true,
   proxyReqOptDecorator: function(proxyReqOpts, srcReq) {
     return new Promise(function(resolve, reject) {
+      console.log(proxyReqOpts.headers["user-agent"])
       Object.assign (proxyReqOpts.headers, {
         "host": "gd.189.cn",
         "origin": "https://gd.189.cn",
@@ -52,11 +53,13 @@ app.use("/api", proxy("gd.189.cn", {
   parseReqBody : false,
   //reqAsBuffer: true,
   //reqBodyEncoding: null,
+  /*
   proxyReqBodyDecorator: function(bodyContent, srcReq) {
     console.log(bodyContent)
     console.log(srcReq.body)
     return bodyContent
-  }  
+  } 
+  */ 
 }))
 
 app.use(logger('dev'));
